@@ -84,14 +84,25 @@
 
     </ul> -->
     
-    <h3>2.1 Short-form Speech</h3>
+    <h3>2.1 精品拟人对话合成 </h3>
+    <table>
+      <tbody id="tbody_dialog">
+      </tbody>
+    </table>
+
+    <h3>2.2 情感合成 </h3>
     <table>
       <tbody id="tbody_short">
       </tbody>
     </table>
 
-    <h3>2.2 Long-form Speech</h3>
+    <!-- <h3>2.3 拟人对话合成 </h3>
+    <table>
+      <tbody id="tbody_dialog">
+      </tbody>
+    </table> -->
 
+    <h3>2.2 Long-form Speech</h3>
     <table>
       <tbody id="tbody_long">
       </tbody>
@@ -116,8 +127,66 @@
 
 </html>
 
+
 <script type="" text/javascript>
-  function short_form() {
+    function dialog_form() {
+      let scenes = [
+        // ["Speaker", "Male","Female"] ,
+        // ["Prompt",],
+        ["Demo1" ,"1" , "你知道吗，上次那个项目居然提前完成了，这真的是出乎意料，我原本以为至少还需要再拖个一两周呢。","昨天我去了一个展览会，啊那个场馆真的是非常大，走了好几个小时才逛完，不过看到很多有趣的东西还是挺值得的。"],
+        ["Demo2" ,"2" , "前天我去爬了一次山，啊那个风景真的是太美了，站在山顶俯瞰整个城市，感觉整个人都放松了不少。","有时候啊，我真觉得工作压力太大了，每天从早忙到晚，连一点时间都没有去放松，真希望能有个长假让我休息一下。"],
+        ["Demo3" ,"3" , "那天我和朋友们一起去看了一场电影，啊那个剧情真的是让我印象深刻，到现在还记得最后的结局。","最近我迷上了一款新的游戏，啊那个玩法真的是非常吸引人，我一玩就停不下来，结果经常不知不觉就过了好几个小时。"],
+        ["Demo4" ,"4" , "前几天我和同事们一起去唱歌，啊那个气氛真的是太嗨了，大家唱得特别投入，最后嗓子都快喊哑了。","最近我迷上了一款新的游戏，啊那个玩法真的是非常吸引人，我一玩就停不下来，结果经常不知不觉就过了好几个小时。"],
+        ["Demo5" ,"5" , "啊，通过时间给他做一些手工啊，或者说写一封手写信啊，类似于这样的礼物可能会更别出心裁一些。因为怎么说呢？他确实生活当中不缺任何东西啊，你给他买个LV的包。嗯，我个人觉得也没什么新意。","啊他付出了相应的劳动，就可以获得相应的钱财，然后这样的钱财呢，可以在比如说像他学校旁边的小卖部啊，可以嗯买一份自己想吃的小零食，或者说，啊买一点自己喜欢的文具或者小玩具，类似于这样的情况出现。"],
+      ]
+      let models = ["Speaker", "Male",  "Female"]
+      let short_data = `
+          <tr>
+          `
+      for (const id in models) {
+        model = models[id]
+        // cite = ""
+      //   if (id != 3) {
+      //     num = Number(id) + 1
+      //     cite += "[" + num + "]"
+      //   }
+      //   short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
+        short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model  + '<strong></td>'
+      }
+      short_data += `</tr>`
+      
+      for (let x in scenes) {
+        let scene = scenes[x]
+        let name = scene[0]
+        let num  = scene[1]
+        let txt1 = scene[2]
+        let txt2 = scene[3]
+  
+      //   let file = scene[0]
+      //   let text = scene[1]
+      //   let trans = scene[2]
+        let scene_data = ""
+  
+        scene_data += '<tr>'
+      //   scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
+        scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + name + '</td>'
+  
+        scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/dialog/male/male_' + num + '.wav' + '"></audio>'+ txt1 + '</td>'
+        scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/dialog/female/female_' + num + '.wav' + '"></audio>'+ txt2 + '</td>'
+
+      //   for (let z in models) {
+      //     let model = models[z]
+      //     scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
+      //   }
+        scene_data += '</tr>'
+        short_data += scene_data
+      }
+      return short_data
+    }
+
+
+<script type="" text/javascript>
+  function emo_form() {
     let scenes = [
       ["angry", "我都跟你说过多少次了，为什么你总是不听！","件事简直让我气得不行，太过分了！","我真不知道你到底在想什么，气死我了！"] ,
       ["happy", "今天的天气真好，和家人一起出去玩了一整天，吃了好吃的，拍了很多照片，整个过程充满了笑声和快乐。","收到一份意外的礼物，心情一下子被点亮了！这个惊喜真的太棒了，让我感觉特别温暖和幸福。","今天真是太开心了！我和朋友们一起去了公园，阳光明媚，大家都笑得特别开心，感觉所有的烦恼都消失了。"],
@@ -214,7 +283,8 @@
   }
 
   window.onload = function () {
-    document.getElementById('tbody_short').innerHTML = short_form()
+    document.getElementById('tbody_short').innerHTML = emo_form()
+    document.getElementById('tbody_dialog').innerHTML = dialog_form()
     document.getElementById('tbody_long').innerHTML = long_form()
   }
 </script>
