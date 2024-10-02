@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://QicongXie.github.io/end2endvc/ -->
+<html lang="en-US">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+  <title>HiGNN-TTS</title>
+  <meta name="generator" content="Jekyll v3.9.0">
+  <meta property="og:title" content="title">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <!-- End Jekyll SEO tag -->
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#157878">
+  <link rel="stylesheet" href="style.css">
+  <style>
+        .method {
+            display: inline-block;
+/*             width: 120px; /* Adjust the width as needed */ */
+            font-weight: bold;
+        }
+
+        .explanation {
+            display: inline-block;
+/*             margin-left: 20px; /* Adjust the margin as needed */ */
+        }
+    </style>
+</head>
+
+<body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+  <section class="page-header">
+    <!-- <h1 class="project-name">Demo PAGE</h1> -->
+    <!-- <h2 class="project-tagline"></h2> -->
+
+
+  </section>
+
+  <section class="main-content">
+    <h1 id="">
+      <center>ASLP TTS Demo Page</center>
+    </h1>
+
+    <!-- <h3 id=""> -->
+<!--       <center>A work submitted to ASRU2023</center> -->
+      <!-- <center>Dake Guo<sup>1</sup>, Xinfa Zhu<sup>1</sup>, Liumeng Xue<sup>2</sup>, Tao Li<sup>1</sup>, Yuanjun Lv<sup>1</sup>, Yuepeng Jiang<sup>1</sup>, Lei Xie<sup>1</sup></center>  -->
+      <!-- <center><sup>1</sup>Audio, Speech and Language Processing Group (ASLP@NPU), School of Computer Science, Northwestern Polytechnical University, Xi'an, China </center> -->
+      <!-- <center><sup>2</sup>School of Data Science, The Chinese University of Hong Kong, Shenzhen (CUHK-Shenzhen), China </center> -->
+    <!-- </h3> -->
+    <!-- <center>Accepted by ASRU 2023</center> -->
+
+
+    <br><br>
+    <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
+    <!-- <p>Recent advances in text-to-speech, particularly those based on Graph Neural Networks (GNNs), have significantly improved the expressiveness of short-form synthetic speech. However, generating human-parity long-form speech with high dynamic prosodic variations is still challenging. To address this problem, we expand the capabilities of GNNs with a hierarchical prosody modeling approach, named HiGNN-TTS. Specifically, we add a virtual global node in the graph to strengthen the interconnection of word nodes and introduce a contextual attention mechanism to broaden the prosody modeling scope of GNNs from intra-sentence to inter-sentence. Additionally, we perform hierarchical supervision from acoustic prosody on each node of the graph to capture the prosodic variations with a high dynamic range. Ablation studies show the effectiveness of HiGNN-TTS in learning hierarchical prosody. Both objective and subjective evaluations demonstrate that HiGNN-TTS significantly improves the naturalness and expressiveness of long-form synthetic speech.</p> -->
+    <p>ASLP TTS大模型demo页面，包含三个部分</p>
+    <p>1.精品拟人对话合成</p>
+    <p>2.精品有声书合成</p>
+    <p>3.zero shot音色克隆</p>
+
+    <table frame=void rules=none>
+      <tr>
+        <center><img src='raw/fig/global.png' width="50%"></center>
+      </tr>
+      <tr>
+      </tr>
+    </table>
+    <br><br>
+
+
+    <h2>2. Demos <a name="Comparison"></a></h2>
+    <!-- <p>Compared Methods</p>
+    <ul>
+      <li><b>FS2-BERT [1]:</b>a FastSpeech2-based model, which considers context information by using cross-sentence BERT
+            embedding .</li> </li>
+      <li><b>HCE [2]:</b>a FastSpeech2-based model, which utilizes Hierarchical Context Encoder (HCE) to predict the
+            sentence-level style embedding from the hierarchical context information.</li>
+      <li><b>ATCE [3]:</b>a FastSpeech2-based model with Acoustic and Text Context Encoders (ATCE), which uses both text and
+            audio context to obtain context prosody representations.</li>        
+      <li><b>HiGNN-TTS:</b> proposed method.</li>
+
+    </ul> -->
+    
+    <h3>2.1 Short-form Speech</h3>
+    <table>
+      <tbody id="tbody_short">
+      </tbody>
+    </table>
+
+    <h3>2.2 Long-form Speech</h3>
+
+    <table>
+      <tbody id="tbody_long">
+      </tbody>
+    </table>
+    
+  <h3>References:</h3>
+  <div>
+    <div><cite><a href="https://www.isca-speech.org/archive_v0/Interspeech_2019/pdfs/3177.pdf">
+        [1] Tomoki Hayashi, Shinji Watanabe, Tomoki Toda, Kazuya Takeda, Shubham Toshniwal, and Karen Livescu,
+        "Pre-trained text embeddings for enhanced text-to-speech synthesis," in Proc. Interspeech, 2019, pp.
+        4430–4434.</a></cite></div>
+    <div><cite><a href="https://arxiv.org/pdf/2211.02336.pdf">
+        [2] Detai Xin, Sharath Adavanne, Federico Ang, Ashish Kulkarni, Shinnosuke Takamichi, and Hiroshi Saruwatari,
+        "Improving speech prosody of audiobook text-to-speech synthesis with acoustic and textual contexts," in
+        Proc. ICASSP, 2023, pp. 1–5.</a></cite></div>
+    <div><cite><a href="https://arxiv.org/pdf/2203.12201.pdf">
+        [3] Shun Lei, Yixuan Zhou, Liyang Chen, Zhiyong Wu, Shiyin Kang, and Helen Meng, "Towards expressive speaking
+        style modelling with hierarchical context information for Mandarin speech synthesis," in Proc. ICASSP
+        2022, 2022, pp. 7922–7926.</a></cite></div>
+  </div>
+
+
+</html>
+
+<script type="" text/javascript>
+  function short_form() {
+    let scenes = [
+      ["DB_19M_000033_0007", "褚师弟，承让承让，伤得不厉害吗？","Junior Brother Chu, you're being too modest. Did you get hurt badly?"] ,
+      ["DB_19M_000121_0001", "短话音未了，一连声的悲凄苦笑，突然发自仁立蔷薇坟前的玄衫女子口中，宛如空山鹃位、巫峡猿啼，令人闻直心酸。","The short melody remained unfinished, with a continuous stream of sorrowful and bitter laughter. Suddenly, emanating from the lips of a woman in a dark robe standing before the rose tomb came a sound akin to the cuckoo in an empty mountain and the howling monkeys in the Wuxia Gorge, which made people feel deeply heartbroken."],
+      ["DB_19M_000167_0007", "这表示他们并不怕冷。他们只是在等候着、磨时间。等一个人，或是等一件待做的事情。","This shows that they are not afraid of the cold. They are just waiting and killing time. Waiting for someone or waiting for something to be done."],
+      ["DB_26F_010036_0010", "现在不要问，只问你能不能做到？只要他有该杀之罪，我定能做到。","I won't ask now, I'll only ask if you can do it. As long as he deserves to be killed, I'm sure I can do it."],
+      ["DB_26F_010041_0005", "三个人仿佛犯了大罪似地连忙跪下，齐声说：弟子知罪。","The three individuals quickly knelt down as if they had committed a great sin, and they all said in unison, \"Disciples acknowledge their guilt.\""],
+      ["DB_26F_020025_0064", "杰克突然大声地说：陈叔叔，你要是跟着进去，我就不玩儿了。","Jack suddenly said loudly, \"Uncle Chen, if you come in with us, I won't play anymore.\""]
+    ]
+    let models = ["FS2BERT", "HCE",  "TACE", "HiGNN-TTS"]
+    let short_data = `
+        <tr>
+          <td style="text-align: center; width: 20%;" rowspan=1><strong>Text<strong></td>
+          <td style="text-align: center; width: 22%;" rowspan=1><strong>English translation<strong></td>
+        `
+    for (const id in models) {
+      model = models[id]
+      cite = ""
+      if (id != 3) {
+        num = Number(id) + 1
+        cite += "[" + num + "]"
+      }
+      short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
+    }
+    short_data += `</tr>`
+    
+    for (let x in scenes) {
+      let scene = scenes[x]
+      let file = scene[0]
+      let text = scene[1]
+      let trans = scene[2]
+      let scene_data = ""
+
+      scene_data += '<tr>'
+      scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + trans + '</td>'
+      for (let z in models) {
+        let model = models[z]
+        scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
+        
+      }
+      scene_data += '</tr>'
+      short_data += scene_data
+    }
+    return short_data
+  }
+
+  function long_form(params) {
+    let scenes = [
+      ["long1", "照说年纪不大，可是满脸皱纹深陷，却胜似七八十岁老翁，身穿蓝布直缀，颈中挂着个婴儿所用的锦缎围延，围延上绣著幅花猫扑蝶图，已然陈旧破烂。“这怪人在这儿坐了老半天啦，怎麽动也不动？”,“别叫怪人，要叫“老伯伯”。你叫他怪人，他要生气的。”,“他还不怪吗？这麽老了，头颈里却挂了个围延。他生了气，要是胡子都翘了起来，那才好看呢。”从小舟中拿起一个莲蓬，往那人头上掷去。小舟与那怪客相距数丈，陆无双年纪虽小，手上劲力竟然不弱，这一掷也是甚准。“表妹！”待要阻止，已然不及，只见那莲蓬迳往怪客脸上飞去。那怪客头一仰，已咬住莲蓬，也不伸手去拿，舌头卷处，咬住莲蓬便大嚼起来。五个少女见他竟剥不出莲子，也不怕苦涩，就这麽连瓣连衣的吞吃。",`According to his age, he shouldn't be old, but his face is full of deep wrinkles, making him look like a seventy or eighty-year-old man. He is dressed in blue cloth, and around his neck, he hangs a silk baby bib embroidered with a picture of flowers, cats, and butterflies, which is already worn and tattered. "This strange man has been sitting here for quite a while. Why doesn't he move?" "Don't call him a strange man. Call him 'elderly uncle.' If you call him a strange man, he'll get angry." "Isn't he strange though? He's so old, yet he's wearing a baby bib around his neck. If he gets angry and his beard sticks up, that would be a sight to see." Taking a lotus seedpod from the small boat, she hurled it toward the man's head. The distance between the small boat and the strange guest was several zhangs (a Chinese measurement unit), and although Lu Wushuang was young, her strength was surprisingly strong, and the throw was quite accurate. "Cousin!" Although they wanted to stop her, it was too late. They saw the lotus seedpod fly straight toward the strange man's face. The strange man tilted his head back and caught the lotus seedpod in his mouth. Instead of reaching for it, he rolled his tongue around it and started chewing on it. The five girls saw that he couldn't peel out the lotus seeds and didn't mind the bitterness, so they started eating the lotus seedpods, petals and all.`],
+      ["long2", "洛秩终于长舒了一口气，把目光移向右侧的玻璃，表情放松而冷漠。北京秋天的晚上很有些萧索，烤肉店内外的温差让窗子上结起了密密的水珠。洛秩试探性地拿起了一杯酒，一口灌下。大家都是不被爱的人，自己没那么彪悍勇敢，只能喝酒略表敬意。世界上总有那么一种人，对于庸庸碌碌的普通人来说，他们的存在简直是一种讽刺。比如盛淮南。“对了，你跟他前女友是同班同学吧？”洛秩吓了一跳，本以为对面的人已经睡死了。",`Luozhi finally heaved a sigh of relief, shifting his gaze to the glass on the right with a relaxed yet indifferent expression. Beijing's autumn nights were somewhat desolate, and the temperature difference between inside and outside the barbecue restaurant caused dense beads of water to form on the windows. Luozhi tentatively picked up a glass of wine and gulped it down. Everyone present was unloved, not as fearless and brave as they seemed, but could only drink to show a little respect. In the world, there always exists a kind of person who is an irony to ordinary and mediocre people. For example, Sheng Huainan. "By the way, you and his ex-girlfriend were classmates, right?" Luozhi was startled, thinking the person opposite him had already fallen into a deep sleep.`],
+    ]
+    let models = ["FS2BERT", "HCE",  "TACE", "HiGNN-TTS"]
+    let long_data = `
+        <tr>
+          <td style="text-align: center; width: 20%;" rowspan=1><strong>Text<strong></td>
+          <td style="text-align: center; width: 22%;" rowspan=1><strong>English translation<strong></td>
+        `
+    for (const id in models) {
+      model = models[id]
+      cite = ""
+      if (id != 3) {
+        num = Number(id) + 1
+        cite += "[" + num + "]"
+      }
+      long_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
+    }
+    long_data += `</tr>`
+    
+    for (let x in scenes) {
+      let scene = scenes[x]
+      let file = scene[0]
+      let text = scene[1]
+      let trans = scene[2]
+      let scene_data = ""
+
+      scene_data += '<tr>'
+      scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + trans + '</td>'
+      for (let z in models) {
+        let model = models[z]
+        scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
+        
+      }
+      scene_data += '</tr>'
+      long_data += scene_data
+    }
+    return long_data
+  }
+
+  window.onload = function () {
+    document.getElementById('tbody_short').innerHTML = short_form()
+    document.getElementById('tbody_long').innerHTML = long_form()
+  }
+</script>
+
