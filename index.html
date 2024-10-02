@@ -84,9 +84,9 @@
 
     </ul> -->
     
-    <h3>2.1 精品拟人对话合成 </h3>
+    <h3>2.1 精品拟人语句合成 </h3>
     <table>
-      <tbody id="tbody_dialog">
+      <tbody id="tbody_niren">
       </tbody>
     </table>
 
@@ -102,9 +102,9 @@
       </tbody>
     </table> -->
 
-    <h3>2.2 Long-form Speech</h3>
+    <h3>2.3 中英名人语音克隆</h3>
     <table>
-      <tbody id="tbody_long">
+      <tbody id="tbody_fa">
       </tbody>
     </table>
     
@@ -129,7 +129,7 @@
 
 
 <script type="" text/javascript>
-    function dialog_form() {
+    function niren_form() {
       let scenes = [
         // ["Speaker", "Male","Female"] ,
         // ["Prompt",],
@@ -139,7 +139,7 @@
         ["Demo4" ,"4" , "前几天我和同事们一起去唱歌，啊那个气氛真的是太嗨了，大家唱得特别投入，最后嗓子都快喊哑了。","最近我迷上了一款新的游戏，啊那个玩法真的是非常吸引人，我一玩就停不下来，结果经常不知不觉就过了好几个小时。"],
         ["Demo5" ,"5" , "啊，通过时间给他做一些手工啊，或者说写一封手写信啊，类似于这样的礼物可能会更别出心裁一些。因为怎么说呢？他确实生活当中不缺任何东西啊，你给他买个LV的包。嗯，我个人觉得也没什么新意。","啊他付出了相应的劳动，就可以获得相应的钱财，然后这样的钱财呢，可以在比如说像他学校旁边的小卖部啊，可以嗯买一份自己想吃的小零食，或者说，啊买一点自己喜欢的文具或者小玩具，类似于这样的情况出现。"],
       ]
-      let models = ["Speaker", "Male",  "Female"]
+      let models = [ "Male",  "Female"]
       let short_data = `
           <tr>
           `
@@ -169,7 +169,7 @@
   
         scene_data += '<tr>'
       //   scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
-        scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + name + '</td>'
+        // scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + name + '</td>'
   
         scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/dialog/male/male_' + num + '.wav' + '"></audio>'+ txt1 + '</td>'
         scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/dialog/female/female_' + num + '.wav' + '"></audio>'+ txt2 + '</td>'
@@ -237,6 +237,62 @@
     return short_data
   }
 
+  function fa_form() {
+    let scenes = [
+      ["Trump", 'trump'  , "Whats the role of humanism today? At the first sight of this topic...","I can assure you, madam, I may be getting on in years but my teeth are very much my own.","In the absence of confiscation, the Portuguese inquisitors were not earnest in tracing the heresies of ancestors or in following up the records of fugitives."] ,
+      ["Jobs" , 'jobs'  , "The government announced a new policy to reduce carbon emissions by 2030.","The recipe calls for two cups of flour and one teaspoon of baking soda.","There is need, therefore, of an interpreter to make the scripture canon, and hence follows one of these two things. That either the word of the interpreter is the word of God, or that the canon of Christian doctrine is not the word of God."],
+      ["Musk" , 'musk'  , "I'm just trying to take care of my family, trying to give them a good life.","What time does the meeting start tomorrow?","he user should ensure that the software is updated to the latest version."],
+      ["Obama", 'obama'  , "In the absence of confiscation, the Portuguese inquisitors were not earnest in tracing the heresies of ancestors or in following up the records of fugitives.","I'm not in the least interested in how Mr. Fleming was killed, and the question is simply not involved in what Mrs. Fleming wants me to do. He stopped there. Good was looking at him sideways, sucking in one corner of his mouth and pushing out the other. It was not a facial contortion that impressed Ran favorably.","These dirty children also saw a lady and gentleman inside, and quickly guessed what they had come about. Their laughter and rude remarks attracted several other persons to the window, and a complete audience was formed to witness the conduct of the lovers."],
+      ["Swift", 'swift'  , "an ideal harmonious society. Humanism, is a lighthouse on this way to guide us in case we are getting lost.","its hard changing your life.That in the process of working on your dreams you are going to incur lots of disappointment.","There is need, therefore, of an interpreter to make the scripture canon, and hence follows one of these two things. That either the word of the interpreter is the word of God, or that the canon of Christian doctrine is not the word of God."],
+    ]
+    let models = ["Name", "Prompt",  "Demo1", "Demo2","Demo3"]
+    let short_data = `
+        <tr>
+        `
+    for (const id in models) {
+      model = models[id]
+      cite = ""
+    //   if (id != 3) {
+    //     num = Number(id) + 1
+    //     cite += "[" + num + "]"
+    //   }
+    //   short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
+      short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model  + '<strong></td>'
+    }
+    short_data += `</tr>`
+    
+    for (let x in scenes) {
+      let scene = scenes[x]
+      let name = scene[0]
+      let id = scene[1]
+      let txt1 = scene[2]
+      let txt2 = scene[3]
+      let txt3 = scene[4]
+
+    //   let file = scene[0]
+    //   let text = scene[1]
+    //   let trans = scene[2]
+      let scene_data = ""
+
+      scene_data += '<tr>'
+    //   scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
+      scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + name + '</td>'
+
+      scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/fmpeo/' + id + '/' + id + '_prompt.wav' + '"></audio>' + '</td>'
+      scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/fmpeo/' + id + '/' + id + '_1.wav' + '"></audio>'+ txt1 + '</td>'
+      scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/fmpeo/' + id + '/' + id + '_2.wav' + '"></audio>'+ txt2 + '</td>'
+      scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/fmpeo/' + id + '/' + id + '_3.wav' + '"></audio>'+ txt3 + '</td>'
+
+    //   for (let z in models) {
+    //     let model = models[z]
+    //     scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
+    //   }
+      scene_data += '</tr>'
+      short_data += scene_data
+    }
+    return short_data
+  }
+
   function long_form(params) {
     let scenes = [
       ["long1", "照说年纪不大，可是满脸皱纹深陷，却胜似七八十岁老翁，身穿蓝布直缀，颈中挂着个婴儿所用的锦缎围延，围延上绣著幅花猫扑蝶图，已然陈旧破烂。“这怪人在这儿坐了老半天啦，怎麽动也不动？”,“别叫怪人，要叫“老伯伯”。你叫他怪人，他要生气的。”,“他还不怪吗？这麽老了，头颈里却挂了个围延。他生了气，要是胡子都翘了起来，那才好看呢。”从小舟中拿起一个莲蓬，往那人头上掷去。小舟与那怪客相距数丈，陆无双年纪虽小，手上劲力竟然不弱，这一掷也是甚准。“表妹！”待要阻止，已然不及，只见那莲蓬迳往怪客脸上飞去。那怪客头一仰，已咬住莲蓬，也不伸手去拿，舌头卷处，咬住莲蓬便大嚼起来。五个少女见他竟剥不出莲子，也不怕苦涩，就这麽连瓣连衣的吞吃。",`According to his age, he shouldn't be old, but his face is full of deep wrinkles, making him look like a seventy or eighty-year-old man. He is dressed in blue cloth, and around his neck, he hangs a silk baby bib embroidered with a picture of flowers, cats, and butterflies, which is already worn and tattered. "This strange man has been sitting here for quite a while. Why doesn't he move?" "Don't call him a strange man. Call him 'elderly uncle.' If you call him a strange man, he'll get angry." "Isn't he strange though? He's so old, yet he's wearing a baby bib around his neck. If he gets angry and his beard sticks up, that would be a sight to see." Taking a lotus seedpod from the small boat, she hurled it toward the man's head. The distance between the small boat and the strange guest was several zhangs (a Chinese measurement unit), and although Lu Wushuang was young, her strength was surprisingly strong, and the throw was quite accurate. "Cousin!" Although they wanted to stop her, it was too late. They saw the lotus seedpod fly straight toward the strange man's face. The strange man tilted his head back and caught the lotus seedpod in his mouth. Instead of reaching for it, he rolled his tongue around it and started chewing on it. The five girls saw that he couldn't peel out the lotus seeds and didn't mind the bitterness, so they started eating the lotus seedpods, petals and all.`],
@@ -281,9 +337,9 @@
   }
 
   window.onload = function () {
-    document.getElementById('tbody_dialog').innerHTML = dialog_form()
+    document.getElementById('tbody_niren').innerHTML = nrien_form()
     document.getElementById('tbody_short').innerHTML = emo_form()
-    document.getElementById('tbody_long').innerHTML = long_form()
+    document.getElementById('tbody_fa').innerHTML = fa_form()
   }
 </script>
 
