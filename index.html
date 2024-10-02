@@ -184,8 +184,6 @@
       return short_data
     }
 
-
-<script type="" text/javascript>
   function emo_form() {
     let scenes = [
       ["angry", "我都跟你说过多少次了，为什么你总是不听！","件事简直让我气得不行，太过分了！","我真不知道你到底在想什么，气死我了！"] ,
@@ -283,8 +281,8 @@
   }
 
   window.onload = function () {
-    document.getElementById('tbody_short').innerHTML = emo_form()
     document.getElementById('tbody_dialog').innerHTML = dialog_form()
+    document.getElementById('tbody_short').innerHTML = emo_form()
     document.getElementById('tbody_long').innerHTML = long_form()
   }
 </script>
