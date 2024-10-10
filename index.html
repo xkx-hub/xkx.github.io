@@ -130,7 +130,9 @@
             您的浏览器不支持音频元素，请使用支持的浏览器。
         </audio>
     </div>
+
     <p style="height: 20px;"></p>
+
     <h3>2.2 精品有声书合成</h3>
     <div style="line-height: 1.8; font-family: Arial, sans-serif; margin-bottom: 20px;text-align: center;">
         <p>大青马的步伐似乎也不那么镇定了。陈阵的双腿和马身都在发抖，并迅速发生可怕的共振，继而传染放大了人马共同的恐惧。</p>
@@ -148,28 +150,21 @@
             您的浏览器不支持音频元素，请使用支持的浏览器。
         </audio>
     </div>
+
     <p style="height: 20px;"></p>
-    
     
     <h3>2.3 精品拟人语句合成 </h3>
     <table>
       <tbody id="tbody_niren">
       </tbody>
     </table>
-    <p style="height: 20px;"></p>
+
 
     <h3>2.4 情感合成 </h3>
     <table>
       <tbody id="tbody_short">
       </tbody>
     </table>
-
-    <!-- <h3>2.3 拟人对话合成 </h3>
-    <table>
-      <tbody id="tbody_dialog">
-      </tbody>
-    </table> -->
-    <p style="height: 20px;"></p>
 
     <h3>2.5 中英名人语音克隆</h3>
     <table>
@@ -184,8 +179,7 @@
 <script type="" text/javascript>
     function niren_form() {
       let scenes = [
-        // ["Speaker", "Male","Female"] ,
-        // ["Prompt",],
+
         ["Demo1" ,"1" , "你知道吗，上次那个项目居然提前完成了，这真的是出乎意料，我原本以为至少还需要再拖个一两周呢。"，"昨天我去了一个展览会，啊那个场馆真的是非常大，走了好几个小时才逛完，不过看到很多有趣的东西还是挺值得的。"],
         ["Demo2" ,"2" , "前天我去爬了一次山，啊那个风景真的是太美了，站在山顶俯瞰整个城市，感觉整个人都放松了不少。","有时候啊，我真觉得工作压力太大了，每天从早忙到晚，连一点时间都没有去放松，真希望能有个长假让我休息一下。"],
         ["Demo3" ,"3" , "那天我和朋友们一起去看了一场电影，啊那个剧情真的是让我印象深刻，到现在还记得最后的结局。","最近我迷上了一款新的游戏，啊那个玩法真的是非常吸引人，我一玩就停不下来，结果经常不知不觉就过了好几个小时。"],
@@ -196,15 +190,10 @@
       let short_data = `
           <tr>
           `
-          
+
       for (const id in models) {
         model = models[id]
-        // cite = ""
-      //   if (id != 3) {
-      //     num = Number(id) + 1
-      //     cite += "[" + num + "]"
-      //   }
-      //   short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
+
         short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model  + '<strong></td>'
       }
       short_data += `</tr>`
@@ -222,16 +211,10 @@
         let scene_data = ""
   
         scene_data += '<tr>'
-      //   scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
-        // scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + name + '</td>'
   
         scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/dialog/male/male_' + num + '.wav' + '"></audio>'+ txt2 + '</td>'
         scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/dialog/female/female_' + num + '.wav' + '"></audio>'+ txt1 + '</td>'
 
-      //   for (let z in models) {
-      //     let model = models[z]
-      //     scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
-      //   }
         scene_data += '</tr>'
         short_data += scene_data
       }
