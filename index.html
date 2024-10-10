@@ -178,47 +178,36 @@
 
 <script type="" text/javascript>
     function niren_form() {
-      let scenes = [
-
-        ["Demo1" ,"1" , "你知道吗，上次那个项目居然提前完成了，这真的是出乎意料，我原本以为至少还需要再拖个一两周呢。"，"昨天我去了一个展览会，啊那个场馆真的是非常大，走了好几个小时才逛完，不过看到很多有趣的东西还是挺值得的。"],
-        ["Demo2" ,"2" , "前天我去爬了一次山，啊那个风景真的是太美了，站在山顶俯瞰整个城市，感觉整个人都放松了不少。","有时候啊，我真觉得工作压力太大了，每天从早忙到晚，连一点时间都没有去放松，真希望能有个长假让我休息一下。"],
-        ["Demo3" ,"3" , "那天我和朋友们一起去看了一场电影，啊那个剧情真的是让我印象深刻，到现在还记得最后的结局。","最近我迷上了一款新的游戏，啊那个玩法真的是非常吸引人，我一玩就停不下来，结果经常不知不觉就过了好几个小时。"],
-        ["Demo4" ,"4" , "前几天我和同事们一起去唱歌，啊那个气氛真的是太嗨了，大家唱得特别投入，最后嗓子都快喊哑了。","嗯说起来我觉得你上次推荐的那本书真的很不错，读完后感觉收获很多。"],
-        ["Demo5" ,"5" , "啊，通过时间给他做一些手工啊，或者说写一封手写信啊，类似于这样的礼物可能会更别出心裁一些。因为怎么说呢？他确实生活当中不缺任何东西啊，你给他买个LV的包。嗯，我个人觉得也没什么新意。","啊他付出了相应的劳动，就可以获得相应的钱财，然后这样的钱财呢，可以在比如说像他学校旁边的小卖部啊，可以嗯买一份自己想吃的小零食，或者说，啊买一点自己喜欢的文具或者小玩具，类似于这样的情况出现。"],
-      ]
-      let models = [ "Male",  "Female"]
+      const scenes = [
+        ["Demo1", "1", "你知道吗，上次那个项目居然提前完成了，这真的是出乎意料，我原本以为至少还需要再拖个一两周呢。", "昨天我去了一个展览会，啊那个场馆真的是非常大，走了好几个小时才逛完，不过看到很多有趣的东西还是挺值得的。"],
+        ["Demo2", "2", "前天我去爬了一次山，啊那个风景真的是太美了，站在山顶俯瞰整个城市，感觉整个人都放松了不少。", "有时候啊，我真觉得工作压力太大了，每天从早忙到晚，连一点时间都没有去放松，真希望能有个长假让我休息一下。"],
+        ["Demo3", "3", "那天我和朋友们一起去看了一场电影，啊那个剧情真的是让我印象深刻，到现在还记得最后的结局。", "最近我迷上了一款新的游戏，啊那个玩法真的是非常吸引人，我一玩就停不下来，结果经常不知不觉就过了好几个小时。"],
+        ["Demo4", "4", "前几天我和同事们一起去唱歌，啊那个气氛真的是太嗨了，大家唱得特别投入，最后嗓子都快喊哑了。", "嗯说起来我觉得你上次推荐的那本书真的很不错，读完后感觉收获很多。"],
+        ["Demo5", "5", "啊，通过时间给他做一些手工啊，或者说写一封手写信啊，类似于这样的礼物可能会更别出心裁一些。因为怎么说呢？他确实生活当中不缺任何东西啊，你给他买个LV的包。嗯，我个人觉得也没什么新意。", "啊他付出了相应的劳动，就可以获得相应的钱财，然后这样的钱财呢，可以在比如说像他学校旁边的小卖部啊，可以嗯买一份自己想吃的小零食，或者说，啊买一点自己喜欢的文具或者小玩具，类似于这样的情况出现。"],
+      ];
+      const models = ["Male", "Female"];
       let short_data = `
           <tr>
-          `
+          `;
 
-      for (const id in models) {
-        model = models[id]
-
-        short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model  + '<strong></td>'
+      for (const model of models) {
+        short_data += `<td style="text-align: center; width: 14%;" rowspan=1><strong>${model}</strong></td>`;
       }
-      short_data += `</tr>`
-      
-      for (let x in scenes) {
-        let scene = scenes[x]
-        let name = scene[0]
-        let num  = scene[1]
-        let txt1 = scene[2]
-        let txt2 = scene[3]
-  
-      //   let file = scene[0]
-      //   let text = scene[1]
-      //   let trans = scene[2]
-        let scene_data = ""
-  
-        scene_data += '<tr>'
-  
-        scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/dialog/male/male_' + num + '.wav' + '"></audio>'+ txt2 + '</td>'
-        scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/dialog/female/female_' + num + '.wav' + '"></audio>'+ txt1 + '</td>'
+      short_data += `</tr>`;
 
-        scene_data += '</tr>'
-        short_data += scene_data
+      for (const scene of scenes) {
+        const [name, num, txt1, txt2] = scene;
+        let scene_data = "";
+
+        scene_data += '<tr>';
+
+        scene_data += `<td style="text-align: center; width: 22%;" rowspan=1><audio style="width: 100%;" controls src="./raw/dialog/male/male_${num}.wav"></audio>${txt2}</td>`;
+        scene_data += `<td style="text-align: center; width: 22%;" rowspan=1><audio style="width: 100%;" controls src="./raw/dialog/female/female_${num}.wav"></audio>${txt1}</td>`;
+
+        scene_data += '</tr>';
+        short_data += scene_data;
       }
-      return short_data
+      return short_data;
     }
 
   function emo_form() {
