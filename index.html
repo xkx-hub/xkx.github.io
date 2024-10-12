@@ -54,9 +54,9 @@
 
 
     <br><br>
-    <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
+    <h2 id="abstract">1.模型结构<a name="abstract"></a></h2>
     <!-- <p>Recent advances in text-to-speech, particularly those based on Graph Neural Networks (GNNs), have significantly improved the expressiveness of short-form synthetic speech. However, generating human-parity long-form speech with high dynamic prosodic variations is still challenging. To address this problem, we expand the capabilities of GNNs with a hierarchical prosody modeling approach, named HiGNN-TTS. Specifically, we add a virtual global node in the graph to strengthen the interconnection of word nodes and introduce a contextual attention mechanism to broaden the prosody modeling scope of GNNs from intra-sentence to inter-sentence. Additionally, we perform hierarchical supervision from acoustic prosody on each node of the graph to capture the prosodic variations with a high dynamic range. Ablation studies show the effectiveness of HiGNN-TTS in learning hierarchical prosody. Both objective and subjective evaluations demonstrate that HiGNN-TTS significantly improves the naturalness and expressiveness of long-form synthetic speech.</p> -->
-    <p> Model Structure：</p>
+
 
     <table frame=void rules=none>
       <tr>
@@ -73,9 +73,8 @@
     <ul>
         <li><b>1.精品拟人对话语句合成</b></li>
         <li><b>2.精品有声书合成</b></li>
-        <li><b>3.精品拟人语句合成</b></li>
-        <li><b>4.情感语句合成</b></li>
-        <li><b>5.中英名人音色克隆</b></li>
+        <li><b>3.情感语句合成</b></li>
+        <li><b>4.中英名人音色克隆</b></li>
     </ul>
     <p style="height: 20px;"></p>
 
@@ -95,7 +94,7 @@
     </ul> -->
 
     <h3>2.1 精品拟人对话语句合成</h3>
-    <table>
+    <table style="width: 100%;">
         <tbody id="tbody_niren"></tbody>
     </table>
 
@@ -239,13 +238,13 @@
 
 
 
-    <h3>2.4 情感合成 </h3>
+    <h3>2.3 情感合成 </h3>
     <table>
       <tbody id="tbody_short">
       </tbody>
     </table>
 
-    <h3>2.5 中英名人语音克隆</h3>
+    <h3>2.4 中英名人语音克隆</h3>
     <table>
       <tbody id="tbody_fa">
       </tbody>
@@ -264,7 +263,7 @@
         ["Demo4", "4", "前几天我和同事们一起去唱歌，啊那个气氛真的是太嗨了，大家唱得特别投入，最后嗓子都快喊哑了。", "嗯说起来我觉得你上次推荐的那本书真的很不错，读完后感觉收获很多。"],
         ["Demo5", "5", "啊，通过时间给他做一些手工啊，或者说写一封手写信啊，类似于这样的礼物可能会更别出心裁一些。因为怎么说呢？他确实生活当中不缺任何东西啊，你给他买个LV的包。嗯，我个人觉得也没什么新意。", "啊他付出了相应的劳动，就可以获得相应的钱财，然后这样的钱财呢，可以在比如说像他学校旁边的小卖部啊，可以嗯买一份自己想吃的小零食，或者说，啊买一点自己喜欢的文具或者小玩具，类似于这样的情况出现。"],
       ];
-      const models = ["Male", "Female"];
+      const models = ["男", "女"];
       let short_data = `
           <tr>
           `;
@@ -291,11 +290,11 @@
 
   function emo_form() {
     let scenes = [
-      ["angry", "我都跟你说过多少次了，为什么你总是不听！","件事简直让我气得不行，太过分了！","我真不知道你到底在想什么，气死我了！"] ,
-      ["happy", "收到一份意外的礼物，心情一下子被点亮了！这个惊喜真的太棒了，让我感觉特别温暖和幸福。","今天的天气真好，和家人一起出去玩了一整天，吃了好吃的，拍了很多照片，整个过程充满了笑声和快乐。","今天真是太开心了！我和朋友们一起去了公园，阳光明媚，大家都笑得特别开心，感觉所有的烦恼都消失了。"],
-      ["sad"  , "我本以为会好起来，但现实一次次把我推向深渊，那种绝望和无助的感觉，让我觉得自己快要崩溃了。","一切都结束了，心里空空的，仿佛失去了生命中最重要的东西，连呼吸都感觉变得沉重而无意义。","我真的好难过，好像无论我怎么努力，结果都已经注定了。心里那种无力感压得我透不过气，甚至连眼泪都已经流干了。"],
+      ["生气", "angry", "我都跟你说过多少次了，为什么你总是不听！","件事简直让我气得不行，太过分了！","我真不知道你到底在想什么，气死我了！"] ,
+      ["高兴", "happy", "收到一份意外的礼物，心情一下子被点亮了！这个惊喜真的太棒了，让我感觉特别温暖和幸福。","今天的天气真好，和家人一起出去玩了一整天，吃了好吃的，拍了很多照片，整个过程充满了笑声和快乐。","今天真是太开心了！我和朋友们一起去了公园，阳光明媚，大家都笑得特别开心，感觉所有的烦恼都消失了。"],
+      ["伤心"  , "sad"  , "我本以为会好起来，但现实一次次把我推向深渊，那种绝望和无助的感觉，让我觉得自己快要崩溃了。","一切都结束了，心里空空的，仿佛失去了生命中最重要的东西，连呼吸都感觉变得沉重而无意义。","我真的好难过，好像无论我怎么努力，结果都已经注定了。心里那种无力感压得我透不过气，甚至连眼泪都已经流干了。"],
     ]
-    let models = ["Emotion", "Prompt",  "Demo1", "Demo2","Demo3"]
+    let models = ["情感", "提示音频",  "Demo1", "Demo2","Demo3"]
     let short_data = `
         <tr>
         `
@@ -309,10 +308,11 @@
     
     for (let x in scenes) {
       let scene = scenes[x]
-      let emo = scene[0]
-      let txt1 = scene[1]
-      let txt2 = scene[2]
-      let txt3 = scene[3]
+      let emo_cn = scene[0]
+      let emo = scene[1]
+      let txt1 = scene[2]
+      let txt2 = scene[3]
+      let txt3 = scene[4]
 
     //   let file = scene[0]
     //   let text = scene[1]
@@ -321,7 +321,7 @@
 
       scene_data += '<tr>'
     //   scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
-      scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + emo + '</td>'
+      scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + emo_cn + '</td>'
 
       scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/emotion/' + emo + '/' + emo + '_prompt.wav' + '"></audio>' + '</td>'
       scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + '<audio style="width: 100%;" controls="" src="' + './raw/emotion/' + emo + '/' + emo + '_1.wav' + '"></audio>'+ txt1 + '</td>'
@@ -340,13 +340,18 @@
 
   function fa_form() {
     let scenes = [
-      ["Trump", 'trump'  ,"In the absence of confiscation, the Portuguese inquisitors were not earnest in tracing the heresies of ancestors or in following up the records of fugitives." ,"I can assure you, madam, I may be getting on in years but my teeth are very much my own.","Whats the role of humanism today? At the first sight of this topic..."] ,
-      ["Jobs" , 'jobs'  , "The government announced a new policy to reduce carbon emissions by 2030.","The recipe calls for two cups of flour and one teaspoon of baking soda.","There is need, therefore, of an interpreter to make the scripture canon, and hence follows one of these two things. That either the word of the interpreter is the word of God, or that the canon of Christian doctrine is not the word of God."],
-      ["Musk" , 'musk'  , "I'm just trying to take care of my family, trying to give them a good life.","What time does the meeting start tomorrow?","he user should ensure that the software is updated to the latest version."],
-      ["Obama", 'obama'  , "In the absence of confiscation, the Portuguese inquisitors were not earnest in tracing the heresies of ancestors or in following up the records of fugitives.","I'm not in the least interested in how Mr. Fleming was killed, and the question is simply not involved in what Mrs. Fleming wants me to do. He stopped there. Good was looking at him sideways, sucking in one corner of his mouth and pushing out the other. It was not a facial contortion that impressed Ran favorably.","These dirty children also saw a lady and gentleman inside, and quickly guessed what they had come about. Their laughter and rude remarks attracted several other persons to the window, and a complete audience was formed to witness the conduct of the lovers."],
-      ["Swift", 'swift'  , "An ideal harmonious society. Humanism, is a lighthouse on this way to guide us in case we are getting lost.","Its hard changing your life.That in the process of working on your dreams you are going to incur lots of disappointment.","There is need, therefore, of an interpreter to make the scripture canon, and hence follows one of these two things. That either the word of the interpreter is the word of God, or that the canon of Christian doctrine is not the word of God."],
+      ["小蔡"，'caixukun',"1","2","3"],
+      ["小丁"，'dingzhen',"1","2","3"],
+      ["后裔"，'houyi',"1","2","3"],
+      ["大叔"，'ssds',"1","2","3"],
+      ["谢老师"，'xie',"1","2","3"],
+      ["川普", 'trump'  ,"In the absence of confiscation, the Portuguese inquisitors were not earnest in tracing the heresies of ancestors or in following up the records of fugitives." ,"I can assure you, madam, I may be getting on in years but my teeth are very much my own.","Whats the role of humanism today? At the first sight of this topic..."] ,
+      ["樵布斯" , 'jobs'  , "The government announced a new policy to reduce carbon emissions by 2030.","The recipe calls for two cups of flour and one teaspoon of baking soda.","There is need, therefore, of an interpreter to make the scripture canon, and hence follows one of these two things. That either the word of the interpreter is the word of God, or that the canon of Christian doctrine is not the word of God."],
+      ["马思克" , 'musk'  , "I'm just trying to take care of my family, trying to give them a good life.","What time does the meeting start tomorrow?","he user should ensure that the software is updated to the latest version."],
+      ["澳巴马", 'obama'  , "In the absence of confiscation, the Portuguese inquisitors were not earnest in tracing the heresies of ancestors or in following up the records of fugitives.","I'm not in the least interested in how Mr. Fleming was killed, and the question is simply not involved in what Mrs. Fleming wants me to do. He stopped there. Good was looking at him sideways, sucking in one corner of his mouth and pushing out the other. It was not a facial contortion that impressed Ran favorably.","These dirty children also saw a lady and gentleman inside, and quickly guessed what they had come about. Their laughter and rude remarks attracted several other persons to the window, and a complete audience was formed to witness the conduct of the lovers."],
+      ["思威福特", 'swift'  , "An ideal harmonious society. Humanism, is a lighthouse on this way to guide us in case we are getting lost.","Its hard changing your life.That in the process of working on your dreams you are going to incur lots of disappointment.","There is need, therefore, of an interpreter to make the scripture canon, and hence follows one of these two things. That either the word of the interpreter is the word of God, or that the canon of Christian doctrine is not the word of God."],
     ]
-    let models = ["Name", "Prompt",  "Demo1", "Demo2","Demo3"]
+    let models = ["说话人", "提示音频",  "Demo1", "Demo2","Demo3"]
     let short_data = `
         <tr>
         `
@@ -392,49 +397,6 @@
       short_data += scene_data
     }
     return short_data
-  }
-
-  function long_form(params) {
-    let scenes = [
-      ["long1", "照说年纪不大，可是满脸皱纹深陷，却胜似七八十岁老翁，身穿蓝布直缀，颈中挂着个婴儿所用的锦缎围延，围延上绣著幅花猫扑蝶图，已然陈旧破烂。“这怪人在这儿坐了老半天啦，怎麽动也不动？”,“别叫怪人，要叫“老伯伯”。你叫他怪人，他要生气的。”,“他还不怪吗？这麽老了，头颈里却挂了个围延。他生了气，要是胡子都翘了起来，那才好看呢。”从小舟中拿起一个莲蓬，往那人头上掷去。小舟与那怪客相距数丈，陆无双年纪虽小，手上劲力竟然不弱，这一掷也是甚准。“表妹！”待要阻止，已然不及，只见那莲蓬迳往怪客脸上飞去。那怪客头一仰，已咬住莲蓬，也不伸手去拿，舌头卷处，咬住莲蓬便大嚼起来。五个少女见他竟剥不出莲子，也不怕苦涩，就这麽连瓣连衣的吞吃。",`According to his age, he shouldn't be old, but his face is full of deep wrinkles, making him look like a seventy or eighty-year-old man. He is dressed in blue cloth, and around his neck, he hangs a silk baby bib embroidered with a picture of flowers, cats, and butterflies, which is already worn and tattered. "This strange man has been sitting here for quite a while. Why doesn't he move?" "Don't call him a strange man. Call him 'elderly uncle.' If you call him a strange man, he'll get angry." "Isn't he strange though? He's so old, yet he's wearing a baby bib around his neck. If he gets angry and his beard sticks up, that would be a sight to see." Taking a lotus seedpod from the small boat, she hurled it toward the man's head. The distance between the small boat and the strange guest was several zhangs (a Chinese measurement unit), and although Lu Wushuang was young, her strength was surprisingly strong, and the throw was quite accurate. "Cousin!" Although they wanted to stop her, it was too late. They saw the lotus seedpod fly straight toward the strange man's face. The strange man tilted his head back and caught the lotus seedpod in his mouth. Instead of reaching for it, he rolled his tongue around it and started chewing on it. The five girls saw that he couldn't peel out the lotus seeds and didn't mind the bitterness, so they started eating the lotus seedpods, petals and all.`],
-      ["long2", "洛秩终于长舒了一口气，把目光移向右侧的玻璃，表情放松而冷漠。北京秋天的晚上很有些萧索，烤肉店内外的温差让窗子上结起了密密的水珠。洛秩试探性地拿起了一杯酒，一口灌下。大家都是不被爱的人，自己没那么彪悍勇敢，只能喝酒略表敬意。世界上总有那么一种人，对于庸庸碌碌的普通人来说，他们的存在简直是一种讽刺。比如盛淮南。“对了，你跟他前女友是同班同学吧？”洛秩吓了一跳，本以为对面的人已经睡死了。",`Luozhi finally heaved a sigh of relief, shifting his gaze to the glass on the right with a relaxed yet indifferent expression. Beijing's autumn nights were somewhat desolate, and the temperature difference between inside and outside the barbecue restaurant caused dense beads of water to form on the windows. Luozhi tentatively picked up a glass of wine and gulped it down. Everyone present was unloved, not as fearless and brave as they seemed, but could only drink to show a little respect. In the world, there always exists a kind of person who is an irony to ordinary and mediocre people. For example, Sheng Huainan. "By the way, you and his ex-girlfriend were classmates, right?" Luozhi was startled, thinking the person opposite him had already fallen into a deep sleep.`],
-    ]
-    let models = ["FS2BERT", "HCE",  "TACE", "HiGNN-TTS"]
-    let long_data = `
-        <tr>
-          <td style="text-align: center; width: 20%;" rowspan=1><strong>Text<strong></td>
-          <td style="text-align: center; width: 22%;" rowspan=1><strong>English translation<strong></td>
-        `
-    for (const id in models) {
-      model = models[id]
-      cite = ""
-      if (id != 3) {
-        num = Number(id) + 1
-        cite += "[" + num + "]"
-      }
-      long_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
-    }
-    long_data += `</tr>`
-    
-    for (let x in scenes) {
-      let scene = scenes[x]
-      let file = scene[0]
-      let text = scene[1]
-      let trans = scene[2]
-      let scene_data = ""
-
-      scene_data += '<tr>'
-      scene_data += '<td style="text-align: center; width: 20%;" rowspan=1>' + text + '</td>'
-      scene_data += '<td style="text-align: center; width: 22%;" rowspan=1>' + trans + '</td>'
-      for (let z in models) {
-        let model = models[z]
-        scene_data += '<td style="text-align: center"><audio style="width: 100%;" controls="" src="' + './raw/samples/' + model + '/' + file + '.wav' + '"></audio></td>'
-        
-      }
-      scene_data += '</tr>'
-      long_data += scene_data
-    }
-    return long_data
   }
 
   window.onload = function () {
