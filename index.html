@@ -41,7 +41,7 @@
 
   <section class="main-content">
     <h1 id="">
-      <center>ASLP TTS Demo Page</center>
+      <center> NPU-ASLP Specch Generation Model: An Single-Codec + LIama Aproach </center>
     </h1>
 
     <!-- <h3 id=""> -->
@@ -56,7 +56,7 @@
     <br><br>
     <h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
     <!-- <p>Recent advances in text-to-speech, particularly those based on Graph Neural Networks (GNNs), have significantly improved the expressiveness of short-form synthetic speech. However, generating human-parity long-form speech with high dynamic prosodic variations is still challenging. To address this problem, we expand the capabilities of GNNs with a hierarchical prosody modeling approach, named HiGNN-TTS. Specifically, we add a virtual global node in the graph to strengthen the interconnection of word nodes and introduce a contextual attention mechanism to broaden the prosody modeling scope of GNNs from intra-sentence to inter-sentence. Additionally, we perform hierarchical supervision from acoustic prosody on each node of the graph to capture the prosodic variations with a high dynamic range. Ablation studies show the effectiveness of HiGNN-TTS in learning hierarchical prosody. Both objective and subjective evaluations demonstrate that HiGNN-TTS significantly improves the naturalness and expressiveness of long-form synthetic speech.</p> -->
-    <p>Model overview：</p>
+    <p> Model Structure：</p>
 
     <table frame=void rules=none>
       <tr>
@@ -110,16 +110,16 @@
 
     <h3>2.1 精品拟人对话语句合成</h3>
     <div style="line-height: 1.8; font-family: Arial, sans-serif; margin-bottom: 20px;">
-        <p><span style="font-weight: bold; color: #007BFF;">女：</span>哎？好久不见，李明听说你研究生是保研到了西北工业大学的ASLP实验室是吗？</p>
-        <p><span style="font-weight: bold; color: #28A745;">男：</span>嗯，是的，我之前就一直对像音频啊，语音合成这些特别感兴趣，刚好实验室也在专注研究这块，就真的，嗯挺幸运的吧哈哈。</p>
-        <p><span style="font-weight: bold; color: #007BFF;">女：</span>哦？那今天能和大家分享一下呃你们最近在语音合成方面的呃一些进展吗，感觉大家呃现在对这方面都挺感兴趣呢。</p>
-        <p><span style="font-weight: bold; color: #28A745;">男：</span>对，最近呃我们刚开发出了一个用十六万小时呃中英文数据训练的模型，呃效果怎么说呢，嗯真的非常不错。</p>
-        <p><span style="font-weight: bold; color: #007BFF;">女：</span>嗯我好像听说了，尝试了一下呃你们那个三秒音色克隆技术，嗯真的感觉复刻出来的音色特别逼真，感觉好厉害啊！</p>
-        <p><span style="font-weight: bold; color: #28A745;">男：</span>没错，呃我们觉得这项技术未来会在呃很多应用场景上有大用，呃比如说有声书啊，还有对话生成，嗯都可以用上。</p>
-        <p><span style="font-weight: bold; color: #007BFF;">女：</span>哎？说到有声书，大家听了我们实验室的语音作品之后，呃都会觉得嗯音色效果非常逼真，呃有的甚至还有呼吸声，哇塞，真的感觉就像真人在说话。</p>
-        <p><span style="font-weight: bold; color: #28A745;">男：</span>是啊，呃很多人都说听起来就像是有人在他们面前讲故事哈哈哈，嗯特别棒！</p>
-        <p><span style="font-weight: bold; color: #007BFF;">女：</span>确实挺好的，呃我们也希望通过这些技术呃能够让更多的人呃去感受到语言的魅力。</p>
-        <p><span style="font-weight: bold; color: #28A745;">男：</span>嗯没错AI和艺术的结合呃让每个人的声音都有机会被传递出去呃这点还是挺有意思的。</p>
+        <p><span style="font-weight: bold; color: #b7ff00;">女：</span>哎？好久不见，李明听说你研究生是保研到了西北工业大学的ASLP实验室是吗？</p>
+        <p><span style="font-weight: bold; color: #3d28a7;">男：</span>嗯，是的，我之前就一直对像音频啊，语音合成这些特别感兴趣，刚好实验室也在专注研究这块，就真的，嗯挺幸运的吧哈哈。</p>
+        <p><span style="font-weight: bold; color: #b7ff00;">女：</span>哦？那今天能和大家分享一下呃你们最近在语音合成方面的呃一些进展吗，感觉大家呃现在对这方面都挺感兴趣呢。</p>
+        <p><span style="font-weight: bold; color: #3d28a7;">男：</span>对，最近呃我们刚开发出了一个用十六万小时呃中英文数据训练的模型，呃效果怎么说呢，嗯真的非常不错。</p>
+        <p><span style="font-weight: bold; color: #b7ff00;">女：</span>嗯我好像听说了，尝试了一下呃你们那个三秒音色克隆技术，嗯真的感觉复刻出来的音色特别逼真，感觉好厉害啊！</p>
+        <p><span style="font-weight: bold; color: #3d28a7;">男：</span>没错，呃我们觉得这项技术未来会在呃很多应用场景上有大用，呃比如说有声书啊，还有对话生成，嗯都可以用上。</p>
+        <p><span style="font-weight: bold; color: #b7ff00;">女：</span>哎？说到有声书，大家听了我们实验室的语音作品之后，呃都会觉得嗯音色效果非常逼真，呃有的甚至还有呼吸声，哇塞，真的感觉就像真人在说话。</p>
+        <p><span style="font-weight: bold; color: #3d28a7;">男：</span>是啊，呃很多人都说听起来就像是有人在他们面前讲故事哈哈哈，嗯特别棒！</p>
+        <p><span style="font-weight: bold; color: #b7ff00;">女：</span>确实挺好的，呃我们也希望通过这些技术呃能够让更多的人呃去感受到语言的魅力。</p>
+        <p><span style="font-weight: bold; color: #3d28a7;">男：</span>嗯没错AI和艺术的结合呃让每个人的声音都有机会被传递出去呃这点还是挺有意思的。</p>
     </div>
 
     <!-- 插入音频 -->
@@ -133,23 +133,84 @@
 
     <p style="height: 20px;"></p>
 
-    <h3>2.2 精品有声书合成</h3>
+    <!-- <h3>2.2 精品有声书合成</h3>
     <div style="line-height: 1.8; font-family: Arial, sans-serif; margin-bottom: 20px;text-align: center;">
         <p>大青马的步伐似乎也不那么镇定了。陈阵的双腿和马身都在发抖，并迅速发生可怕的共振，继而传染放大了人马共同的恐惧。</p>
         <p>大青马的耳朵背向身后，紧张关注着那条探子狼。一旦狼探明实情，人马可能正好走到离狼群的最近处。</p>
         <p>陈阵觉得自己正在穿越一张巨大的狼口，上面锋利的狼牙，下面也是锋利的狼牙，没准他正走到上下狼牙之间，狼口便咔嚓一声合拢了。</p>
         <p>大青马开始轻轻后蹲聚力，准备最后的拼死一搏。可是，负重的马一启动就得吃亏。</p>
         <p>陈阵忽然像草原牧民那样在危急关头心中呼唤起腾格里：“长生天，腾格里，请你伸出胳膊，帮我一把吧!”</p>
-    </div>
+    </div> -->
 
     <!-- 插入音频 -->
-    <div style="margin-top: 30px; text-align: center;">
+    <!-- <div style="margin-top: 30px; text-align: center;">
         <h4 style="font-family: Arial, sans-serif; color: #6C757D;">点击播放音频：</h4>
         <audio controls style="width: 80%;">
             <source src="./raw/audio_book_1.wav" type="audio/mpeg">
             您的浏览器不支持音频元素，请使用支持的浏览器。
         </audio>
-    </div>
+    </div> -->
+    <table>
+
+        <tr>
+            <td>
+                <p>大青马的步伐似乎也不那么镇定了。陈阵的双腿和马身都在发抖，并迅速发生可怕的共振，继而传染放大了人马共同的恐惧。</p>
+                <p>大青马的耳朵背向身后，紧张关注着那条探子狼。一旦狼探明实情，人马可能正好走到离狼群的最近处。陈阵觉得自己正在</p>
+                <p>穿越一张巨大的狼口，上面锋利的狼牙，下面也是锋利的狼牙，没准他正走到上下狼牙之间，狼口便咔嚓一声合拢了。大青</p>
+                <p>马开始轻轻后蹲聚力，准备最后的拼死一搏。可是，负重的马一启动就得吃亏。陈阵忽然像草原牧民那样在危急关头心中呼</p>
+                <p>唤起腾格里：“长生天，腾格里，请你伸出胳膊，帮我一把吧！”</p>
+            </td>
+
+            <td>
+                <audio controls><source src="./raw/audio_book_1.wav" type="audio/wav"></audio>
+            </td>
+        </tr>
+        
+        <tr>
+            <td>
+                <p>方庆惊魂稍定，悲痛继之而来，失了四十万两军饷，这事非同小可，起码也是个凌迟的罪名。方庆摸摸头皮，欲哭无泪，心</p>
+                <p>中想道：“不如那强盗把我射死罢了！”他呆坐路上，看月亮慢慢升到天中，想来想去，实是难逃一死，叹了口气，摸到一条</p>
+                <p>绊马的粗绳，在颈上打了个结，悬在树桠，企图自尽。身子悬空，绞索渐紧，方庆只觉胸中气促，呼吸窒息，头痛欲裂，难</p>
+                <p>受之极，心中想道：“早知自缢如此辛苦，不如投水好了。”其实北地春寒，投水自杀也是一样的不好受。方庆本是迫于自</p>
+                <p>尽，心中实不想死。绞索更紧，血流急促，更是辛苦，这时想叫又叫不出声，眼前一团黑影渐渐扩大，看看就要气绝身亡。</p>
+            </td>
+
+            <td>
+                <audio controls><source src="./raw/spk1-booktest_1_4_gen4_codec-full.wav" type="audio/wav"></audio>
+            </td>
+        </tr>
+
+        
+
+        <tr>
+            <td>
+                <p>大漠，多么熟悉的大漠，但现在在金镶玉眼睛里，竟透出几许陌生的意味。是不是因为物虽如旧，人事却非？也可能是因为</p>
+                <p>她的心，已不再是离开前那颗幼稚的心，它已多了许多遗忘。她的心里有一个人的影子，在她今后的生命里，她一定会时常</p>
+                <p>记起这个人，也会记起他的话：回到大漠去，在那里，你才是王者，智者。中原，不是属于你的地方。她的马后，一片生机</p>
+                <p>盎然，花红柳绿；眼前，却是一派苍黄，风急沙狂，也许还有一个地方会使她能慢慢抚平创伤，她看到它时，心里会有种回</p>
+                <p>家的感觉。是龙门客栈...</p>
+            </td>
+
+            <td>
+                <audio controls><source src="./raw/spk2-booktest_2_1_gen2_codec-full.wav" type="audio/wav"></audio>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <p>他们究竟是什么势力呢？以卫鞅对天下民间力量的了解，竟是想不清来路。能在栎阳城将三十个墨家剑客在片刻之间干净利</p>
+                <p>索的赶走，绝不是等闲门派。战国学派中，能和墨家在秘密行动上一争高下者，惟有鬼谷子一门。其余学派虽多有深藏不露</p>
+                <p>的特出剑士，但毕竟是修学为主，不可能实施这种霹雳风暴般的袭击行动。即或是名将渊薮的兵家，也因志不在此，而素来</p>
+                <p>不搞秘密行动。那么说，是鬼门发动了这场袭击？有可能。因为鬼谷子一门在政学上是坚定的法家，历来反对墨家</p>
+            </td>
+
+            <td>
+                <audio controls><source src="./raw/spk2-booktest_4_1_gen2_codec-full.wav" type="audio/wav"></audio>
+            </td>
+        </tr>
+    </table>
+
+
 
     <p style="height: 20px;"></p>
     
@@ -213,8 +274,8 @@
   function emo_form() {
     let scenes = [
       ["angry", "我都跟你说过多少次了，为什么你总是不听！","件事简直让我气得不行，太过分了！","我真不知道你到底在想什么，气死我了！"] ,
-      ["happy", "收到一份意外的礼物，心情一下子被点亮了！这个惊喜真的太棒了，让我感觉特别温暖和幸福。","今天的天气真好，和家人一起出去玩了一整天，吃了好吃的，拍了很多照片，整个过程充满了笑声和快乐。",,"今天真是太开心了！我和朋友们一起去了公园，阳光明媚，大家都笑得特别开心，感觉所有的烦恼都消失了。"],
-      ["sad"  , "我本以为会好起来，但现实一次次把我推向深渊，那种绝望和无助的感觉，让我觉得自己快要崩溃了。","一切都结束了，心里空空的，仿佛失去了生命中最重要的东西，连呼吸都感觉变得沉重而无意义。",,"我真的好难过，好像无论我怎么努力，结果都已经注定了。心里那种无力感压得我透不过气，甚至连眼泪都已经流干了。"],
+      ["happy", "收到一份意外的礼物，心情一下子被点亮了！这个惊喜真的太棒了，让我感觉特别温暖和幸福。","今天的天气真好，和家人一起出去玩了一整天，吃了好吃的，拍了很多照片，整个过程充满了笑声和快乐。","今天真是太开心了！我和朋友们一起去了公园，阳光明媚，大家都笑得特别开心，感觉所有的烦恼都消失了。"],
+      ["sad"  , "我本以为会好起来，但现实一次次把我推向深渊，那种绝望和无助的感觉，让我觉得自己快要崩溃了。","一切都结束了，心里空空的，仿佛失去了生命中最重要的东西，连呼吸都感觉变得沉重而无意义。","我真的好难过，好像无论我怎么努力，结果都已经注定了。心里那种无力感压得我透不过气，甚至连眼泪都已经流干了。"],
     ]
     let models = ["Emotion", "Prompt",  "Demo1", "Demo2","Demo3"]
     let short_data = `
@@ -223,11 +284,7 @@
     for (const id in models) {
       model = models[id]
       cite = ""
-    //   if (id != 3) {
-    //     num = Number(id) + 1
-    //     cite += "[" + num + "]"
-    //   }
-    //   short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model + cite + '<strong></td>'
+
       short_data += '<td style="text-align: center; width: 14%;" rowspan=1><strong>' + model  + '<strong></td>'
     }
     short_data += `</tr>`
